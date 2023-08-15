@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Details</title>
+</head>
+<body>
+<h1>Movie Details</h1>
+<p>Title: <span th:text="${movieDetails.title}"></span></p>
+<p>Poster: <img th:src="${movieDetails.poster}" alt="NO IMAGE" width="200"></p>
+<p>Vote Average: <span th:text="${movieDetails.vote_average}"></span></p>
+<p>Plot: <span th:text="${movieDetails.overview}"></span></p>
+
+<h2>Cast</h2>
+<ul>
+    <li th:each="actor: ${movieDetails.cast}" th:text="${actor}"></li>
+</ul>
+
+<h2>Trailer</h2>
+<p><a th:href="${movieDetails.trailerUrl}">Watch Trailer</a></p>
+</body>
+</html>
